@@ -2,7 +2,7 @@
 
 # はじめに
 
-この記事は、tsrmが2024年度のすしすきーアドベントカレンダーへ寄稿したもの。   
+この記事は、tsrmが2024年度のすしすきーアドベントカレンダーに寄稿したもの。   
 フリーテーマということで、最も長時間プレイしたゲームの一つである*RimWorld*について書いた。   
 
 できる限り読みやすくわかりやすいように書いたつもりだが、よりによって「～だ、である」調の長文になってしまった。   
@@ -382,6 +382,7 @@ RimWorldはそんなにヤワなゲームデザインではないのだ！
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/C5jh-eFyEFo?si=Tfg7Tsf1fLfQn5sE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+[上級者向け 襲撃時のアルゴリズム解説とその対策](https://www.youtube.com/playlist?list=PLhh-IVOVVJQ8rh-OxrAs3L7goikhIY60I)
 
 有志によりWikiも運営されている。
 
