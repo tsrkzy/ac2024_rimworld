@@ -298,12 +298,6 @@ strong {
 figcaption {
   font-style: italic;
   line-height: 1.0;
-  &::before {
-    content: "\"";
-  }
-  &::after {
-    content: "\"";
-  }
 }
 
 h1 {
