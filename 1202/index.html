@@ -118,7 +118,31 @@
 <li><a href="#この記事について"
 id="toc-この記事について">この記事について</a></li>
 </ul></li>
-<li><a href="#要件整理" id="toc-要件整理">要件整理</a></li>
+<li><a href="#要件整理" id="toc-要件整理">要件整理</a>
+<ul>
+<li><a href="#記事はmarkdown形式で書きたい"
+id="toc-記事はmarkdown形式で書きたい">記事はMarkdown形式で書きたい</a></li>
+<li><a href="#記事はgitで差分管理したい"
+id="toc-記事はgitで差分管理したい">記事はGitで差分管理したい</a></li>
+<li><a href="#できればcssとかも使って見栄えを良くしたい"
+id="toc-できればcssとかも使って見栄えを良くしたい">できればCSSとかも使って見栄えを良くしたい</a></li>
+<li><a href="#あとmetaタグいじってogp対応したい"
+id="toc-あとmetaタグいじってogp対応したい">あとmetaタグいじってOGP対応したい</a></li>
+<li><a href="#出来上がったhtmlとcssを気軽にwebサイトとして公開したい"
+id="toc-出来上がったhtmlとcssを気軽にwebサイトとして公開したい">出来上がったHTMLとCSSを気軽にWebサイトとして公開したい</a></li>
+</ul></li>
+<li><a href="#実装" id="toc-実装">実装</a>
+<ul>
+<li><a href="#記事はmarkdown形式で書きたい-1"
+id="toc-記事はmarkdown形式で書きたい-1">記事はMarkdown形式で書きたい</a></li>
+<li><a href="#記事はgitで差分管理したい-1"
+id="toc-記事はgitで差分管理したい-1">記事はGitで差分管理したい</a></li>
+<li><a href="#htmlにコンバートcssogp"
+id="toc-htmlにコンバートcssogp">HTMLにコンバート！CSS！OGP！</a></li>
+<li><a href="#出来上がった記事を公開したい"
+id="toc-出来上がった記事を公開したい">出来上がった記事を公開したい</a></li>
+</ul></li>
+<li><a href="#さいごに" id="toc-さいごに">さいごに</a></li>
 </ul>
 </nav>
 <h1 id="はじめに">はじめに</h1>
@@ -138,29 +162,116 @@ Copilot。めちゃくちゃ便利なので仕事でソースコードをはじ�
 <ol type="1">
 <li>記事は<code>Markdown</code>形式で書きたい</li>
 <li>記事は<strong>Git</strong>で差分管理したい</li>
-<li>記事は<strong>HTML</strong>にコンバートして外部公開したい</li>
 <li>できればCSSとかも使って見栄えを良くしたい</li>
 <li>あとmetaタグいじってOGP対応したい</li>
+<li>出来上がったHTMLとCSSを気軽にWebサイトとして公開したい</li>
 </ol>
-<p>プログラマー以外の人にもわかるように、順番に要件について説明していきます。<code>.TXT</code>形式っていうのは皆さんPCでメモ帳つかってテキストファイルを作ったことがあるかと思いますがそれのことです。ただの文字列であり、ただの文字列以上でも文字列以下でもありません。こういった文字数稼ぎはChatGPTが真っ先に「冗長だから削れ」って指摘してくるんですが、普段冗長でないソースコードを仕事で書いている反動なのか、こういう文章を書くときにはついつい冗長にしてしまいがちです。そういうわけでChatGPTには「これは僕の芸風だから校正の対象から外せ」って調教しておきました。ChatGPTはAIなのでちゃんと調教すれば人間の言うことを聞いてくれます。AIにも教育が必要です。</p>
-<p>対してMarkdownというのは拡張子が<code>.md</code>というファイルのことで、例えばこのセクション冒頭はこんな感じに書くことができます。</p>
+<p>プログラマー以外の人にもわかるように、順番に要件について説明していきます。</p>
+<h2 id="記事はmarkdown形式で書きたい">記事はMarkdown形式で書きたい</h2>
+<p><code>.TXT</code>形式っていうのは皆さんPCでメモ帳つかってテキストファイルを作ったことがあるかと思いますがそれのことです。ただの文字列であり、ただの文字列以上でも文字列以下でもありません。こういった文字数稼ぎはChatGPTが真っ先に「冗長だから削れ」って指摘してくるんですが、普段冗長でないソースコードを仕事で書いている反動なのか、こういう文章を書くときにはついつい冗長にしてしまいがちです。そういうわけでChatGPTには「これは僕の芸風だから校正の対象から外せ」って調教しておきました。ChatGPTはAIなのでちゃんと調教すれば人間の言うことを聞いてくれます。AIにも教育が必要です。</p>
+<p>対してMarkdownというのは拡張子が<code>.md</code>というファイルのことで、例えばひとつ前のセクション冒頭はこんな感じに書くことができます。</p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># 要件整理</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>記事は<span class="in">`Markdown`</span>形式で書きたい</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>記事は**Git**で差分管理したい</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>記事は**HTML**にコンバートして外部公開したい</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>できればCSSとかも使って見栄えを良くしたい</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>あとmetaタグいじってOGP対応したい</span></code></pre></div>
-<p>これをHTMLにコンバートするとこうなります。</p>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>できればCSSとかも使って見栄えを良くしたい</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>あとmetaタグいじってOGP対応したい</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>出来上がったHTMLとCSSを気軽にWebサイトとして公開したい</span></code></pre></div>
+<p>これをHTMLに変換するとこうなります。</p>
 <div class="sourceCode" id="cb2"><pre
 class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>要件整理<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">ol</span><span class="dt">&gt;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>記事は<span class="dt">&lt;</span><span class="kw">code</span><span class="dt">&gt;</span>Markdown<span class="dt">&lt;/</span><span class="kw">code</span><span class="dt">&gt;</span>形式で書きたい<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>記事は<span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>Git<span class="dt">&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>で差分管理したい<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>記事は<span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>HTML<span class="dt">&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>にコンバートして外部公開したい<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>できればCSSとかも使って見栄えを良くしたい<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>あとmetaタグいじってOGP対応したい<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>できればCSSとかも使って見栄えを良くしたい<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>あとmetaタグいじってOGP対応したい<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>出来上がったHTMLとCSSを気軽にWebサイトとして公開したい<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">ol</span><span class="dt">&gt;</span></span></code></pre></div>
+<p>それをブラウザで見るとさっきみたいな形式で表示できるってわけですね。HTMLを直接書くよりも文字数が減らせるし、見やすいし書きやすいので便利です。Textileとかいろいろあるんですが、Markdownが一番シンプルで気に入っているので今回はMarkdownを使います。</p>
+<blockquote>
+<p>MisskyのMFMとかも大別するとこれらの仲間でマークアップ言語といいます。テキストだけで記述する、テキストをおしゃれに(マークアップ)するための言語です。
+HTMLもマークアップ言語だったりします。気になる人はググってください。</p>
+</blockquote>
+<h2 id="記事はgitで差分管理したい">記事はGitで差分管理したい</h2>
+<p>Gitというのは乱暴に言ってしまうと、フォルダとその中に含まれるファイルのセーブポイントをたくさん作って他の人と共有できる仕組みです。セーブポイントとセーブポイントの差を表示することもできます。これを使うと、例えばこの記事を書いているときに「あれ？このセクションって書いたっけ？」って思ったときに、Gitのログを見れば「あ、このセクションはこのセーブポイントから追加されたんだな」とか「あ、このセクションはこのセーブポイントで削除されたんだな」とかがわかります。「前に書いた文章のほうがやっぱり良かったな」って思ったら簡単に巻き戻したり、比較しながら書き直したりできます。<strong>「【令和最新版】☆修正中_新しい作成中のアドカレ記事のコピー(2)
+(4)のバックアップのコピー」</strong>といったNastyなファイルを作らなくて良くなります。</p>
+<p>文章だとできることが分かりづらいのでスクショで説明するとこんな感じです。暗い赤が変更があった行、明るい赤が削除された文字列、暗い緑が変更があった行、明るい緑が追加された文字列です。</p>
+<figure>
+<img src="./img/0010_diff.png"
+alt="変更の内容がわかりやすいので校正がらくちん" />
+<figcaption
+aria-hidden="true">変更の内容がわかりやすいので校正がらくちん</figcaption>
+</figure>
+<h2
+id="できればcssとかも使って見栄えを良くしたい">できればCSSとかも使って見栄えを良くしたい</h2>
+<p>Markdownで書いた記事をHTMLに変換すると、見た目がシンプルすぎてちょっと物足りないです。黒文字に白背景、ボタンは灰色の例の見た目になります。このページには別に記述したスタイルシートというものが適用されているので、背景文字色フォント余白その他いろいろが調整されておしゃれになってます。スタイルシートの拡張子は<code>.css</code>で、CSSファイルと言ったりします。</p>
+<p>このCSSファイルをHTMLファイルに読み込ませることでHTMLにスタイルシートを適用できるんですが、単純にMarkdownファイルをHTMLに変換しただけだと、「このCSS使いたいぜ！」という指定がHTMLの中に含まれません。Markdownの中にそんなこと一言も書いてないのであたりまえ。なので、HTMLに変換する際にCSSを読み込むような文章を自動で埋め込めるとGOODです。プログラマーなので自動化は大好きです。</p>
+<figure>
+<img src="./img/0020_link_rel.png"
+alt="ブラウザでF12キーを押すと確認できるやつです" />
+<figcaption
+aria-hidden="true">ブラウザでF12キーを押すと確認できるやつです</figcaption>
+</figure>
+<h2
+id="あとmetaタグいじってogp対応したい">あとmetaタグいじってOGP対応したい</h2>
+<p>OGPというのはOpen Graph
+Protocolの略で、具体的に例を挙げるとMisskyやSlackやDiscordにURLを貼ったときにプレビュー表示されるアレです。</p>
+<figure>
+<img src="./img/0030_ogp.png" alt="アレというのはコレのことです" />
+<figcaption aria-hidden="true">アレというのはコレのことです</figcaption>
+</figure>
+<p>HTMLの中に<code>&lt;meta&gt;</code>タグってやつを書くことでOGPを設定できるんですが、これもMarkdownファイルには含まれていないのでHTMLに変換する際に埋め込みたいです。これもHTMLを書き出す際に毎回毎回手で書くとかやってらんないのでもちろん自動でやりたい。</p>
+<p>別にOGPの設定がなくても記事の表示には全く影響がないんですが、もし万が一誰かが「tsrmさんのこの記事めっちゃ面白かったです！」ってURLをすしすきーに貼ってくれたとき、プレビューが表示されないとちょっと寂しいので是非ともカッコつけて設定しておきたいところ。</p>
+<h2
+id="出来上がったhtmlとcssを気軽にwebサイトとして公開したい">出来上がったHTMLとCSSを気軽にWebサイトとして公開したい</h2>
+<p>これが微妙にめんどくさいところで、例えばクラウド上にHTMLファイルを保存して誰でもダウンロードできるようにしておく、というのとは若干ニュアンスが違う。</p>
+<p>先程からランボーに説明してばかりで怒りのアフガンなんですが、HTMLを置いておく場所が「このHTMLファイルはWebサイトとして見てくれ！」って言いながらHTMLファイルを配ってくれないと、ただダウンロードするだけになる。GoogleDriveにHTMLファイルを置いて共有URLを教えてもらっても先ほど説明した通りダウンロードされるだけなのはそういう理屈です。</p>
+<p>ちなみにこれまた乱暴な説明をすると、この「このファイルはWebサイトとして見てくれ！」って叫びながらファイルを配ってくれる場所を「Webサーバ」といいます。</p>
+<h1 id="実装">実装</h1>
+<p>要件が整理できたところで、実装について書いていきます。最初にわかりやすいように全体図を貼っとくね。</p>
+<figure>
+<img src="./img/0040_summary.png" alt="全体図" />
+<figcaption aria-hidden="true">全体図</figcaption>
+</figure>
+<h2
+id="記事はmarkdown形式で書きたい-1">記事はMarkdown形式で書きたい</h2>
+<p>これはVSCodeでゴリゴリ書けるのでOK。画像はWindowsのスクリーンショット機能でザクザク撮ってます。図はGoogleSlideで作ってスクショ。Windows11にアップデートしたら、デフォルトのスニッピングツールが優秀になってて驚いた。すしすきーにもクリップボードから直接投げ込めるので重宝してます。VSCodeにはCopilotというこれまたWindows製のAIコーディングアシスタントがあるので、これとChatGPTを組み合わせて記事を書きつつ校正していきます。</p>
+<h2 id="記事はgitで差分管理したい-1">記事はGitで差分管理したい</h2>
+<p>WindowsにWSL2でUbuntu入れてるのでその中からGit叩いてます。Windows側にもGit
+for Windowsみたいなのがあった気がするしそっち使っても良いかも。</p>
+<h2 id="htmlにコンバートcssogp">HTMLにコンバート！CSS！OGP！</h2>
+<p>Markdownで記事を書いたところで、気軽にHTMLに変換できなければ意味がなく、前述の通りCSSやOGP設定もしたいので、HTMLの生成が柔軟にできるツールが望ましい。ということで今回採用したのは<a
+href="https://pandoc.org/">Pandoc</a>というコマンドラインツール。今回はMarkdownからHTMLの変換にしか使用しないですが、トップページを見ると様々なフォーマットに対応してるみたいな事が書いてあってビビる。ということで執筆→生成したHTMLを見て確認、という作業を以下のような流れで行います。</p>
+<ol type="1">
+<li>記事を執筆=Markdownファイルを編集する</li>
+<li>Pandocを叩いてMarkdownをHTMLに変換しつつCSSとOGP設定を適用する</li>
+<li>ブラウザでF5を叩いて生成したHTMLを確認する</li>
+</ol>
+<p>コマンドラインツールにまとまったので、ワンコマンドで(2)の操作ができるのがいい感じでした。VSCodeのターミナルからMakefileを叩くだけでいいのでらくちん。本当はファイルの変更を検知して自動的にPandocを叩くようにするのが一番かっこいいんですが、今回はやりかた調べるのめんどくせーな、って思ってスキップしちゃったので来年やります。</p>
+<figure>
+<img src="./img/0050_cli.png" alt="マウス使わなくてもいいから助かる" />
+<figcaption
+aria-hidden="true">マウス使わなくてもいいから助かる</figcaption>
+</figure>
+<h2 id="出来上がった記事を公開したい">出来上がった記事を公開したい</h2>
+<p>これは<a href="https://github.com/">Github</a>と<a
+href="https://raw.githack.com/">Githack</a>を使用することにしました。</p>
+<p>これまた乱暴な説明をすると、GithubはPC上のGitセーブポイントをクラウド上に保存できるようなサービス、GithackはGithubに保存したHTMLに対してWebサーバの働きをしてくれるサービスです。特にGithackはユーザ登録などが必要なく無料で使用できるため、今回はこれを使用しました。</p>
+<p>Githackに代わる他の選択肢としては<a
+href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/WebsiteHosting.html">AWS
+S3の静的ウェブサイトホスティング機能</a>とか<a
+href="https://www.netlify.com/">Netlify</a>とか<a
+href="https://firebase.google.com/?hl=ja">Firebase</a>とか<a
+href="https://vercel.com/">Vercel</a>とかいろいろあったんですが、今回はReactみたいなSPAではなくHTMLを配信すれば済む話なので、そういう大げさなサービスは使わなくてもいいかなって感じです。</p>
+<h1 id="さいごに">さいごに</h1>
+<p>ここで「いかがでしたか？」って書くと炎上しそうなので、なるべく他のことを書こうと思います。</p>
+<p>12/06日分の記事をどうやって書こうか考えて、どうやら2万文字を超えそうだぞということが分かり、最初ははてなブログにアカウントでも作ろうかと思ったんですが、いちいち見出し作ったり太字にしたりリンク入れたり画像差し込んだりのマークアップをWebフォーム上からシコシコやるのハイパーめんどくせえな、ということでなんとかシンプルに済む方法はないかあれこれ考えた結果この方式になり、結果「はてなとかNoteとかWordPressとかで記事を書いてる人はいるだろうけど、この方式で記事作ってる人いないんじゃね？」って思ったので別の記事にした感じです。俺もHTML書き出して自分のサーバに上げてるよ！って人とかいたらLTLでこの記事のリンク貼って騒いでくれると嬉しいです。</p>
+<p>ということで<a
+href="https://github.com/tsrkzy/ac2024_rimworld">GithubのリポジトリのURL</a>を置いときます。プログラマの人ならMakefileを見ればだいたい分かると思います。</p>
+<p>あと大事なことなんですが、<strong>12/06分の記事の情報もこのリポジトリに入ってるので、そっちは12/06のお楽しみということでまだ見ないでね。</strong>まあ見ても良いんですが、すしすきーにURL貼ったりするのはご遠慮くださいって感じです。</p>
+<p>では、<a
+href="https://adventar.org/calendars/9952">明日の記事と12/06の記事</a>をお楽しみに。</p>
+<p>tsrmでした。</p>
 </body>
 </html>
